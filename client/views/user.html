@@ -12,7 +12,7 @@
     	<option>Муж</option>
     	<option>Жен</option>
   		</datalist></div>
-      <input ng-model="task.photo" type="file" multiple accept="image/*,image/jpeg">
+      <input  type="file"  ng-model="task.photo">
       <div><input list="dol" ng-model="task.dol" placeholder="Должность">
       <datalist id="dol">
       <option>Ген директор</option>
@@ -37,7 +37,8 @@
     <ul>
     	<h3>Список Пользователей</h3>
       <li  class="task-item" ng-repeat="task in tasks">
-        <span class="dne" ng-click="handler($index)">{{task.name}} {{task.surname}} {{task.photo}} </span>
+        <span class="dne" ng-click="handler($index)">{{task.name}} {{task.surname}}</span>
+        <a > {{ task.photo }} </a>
         <button class="btn-danger done" id = "ff" ng-click="removeItem($index)">Удалить</button> 
       </li>
       <input type="text" ng-model="Firstname" placeholder="Фамилия">
