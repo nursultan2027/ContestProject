@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<script></script>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/style.css">
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<title>Project</title>
+	<script src="bower/angular.js"></script>
+	<script src="bower/angular-route.js"></script>
+	<script src="bower/angular-local-storage.js"></script>
+	<script src="app/appModule.js"></script>
+	<script src="controllers/taskController.js"></script>
+	<script src="controllers/priemController.js"></script>
+	<script src="controllers/main.js"></script>
+</head>
+<body ng-app="app">
+  <div ng-controller="Main">
+  	<div class="container">
+		<div class="navbar navbar-inverse static-top">
+			    <ul class="nav navbar-nav" id = "menu">
+			    	<li ng-click=" goTo('/User')">Пользователь</li>
+			    </ul>
+		</div>
+<div ng-view>		
+</div>
+</body>
+</html>

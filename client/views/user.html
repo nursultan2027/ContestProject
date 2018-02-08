@@ -1,0 +1,69 @@
+  <div ng-controller="taskController">
+  <div class="container">
+	<div class="row">
+  	<div class="col-md-4 text-center">
+      <h2>Добавить пациента</h2>
+  		<form name="myForm">
+      <div><input type="text" ng-model="task.name" placeholder="Имя"></div>
+      <div><input type="text" ng-model="task.surname" placeholder="Фамилия"></div>
+      <div><input type="text" ng-model="task.thirdname" placeholder="Отчество"></div>
+      <div><input list="sex" ng-model="task.sex" placeholder="Пол">
+      <datalist id="sex">
+    	<option>Муж</option>
+    	<option>Жен</option>
+  		</datalist></div>
+      <input ng-model="task.photo" type="file" multiple accept="image/*,image/jpeg">
+      <div><input list="dol" ng-model="task.dol" placeholder="Должность">
+      <datalist id="dol">
+      <option>Ген директор</option>
+      <option>Директор</option>
+      <option>Заместитель директора</option>
+      <option>Секретарь</option>
+      </datalist></div>
+      <div><input list="podr" ng-model="task.podr" placeholder="Должность">
+      <datalist id="podr">
+      <option>Департамент управления рисками</option>
+      <option>Департамент управления персоналом</option>
+      </datalist></div>
+      <h2>Доступы</h2>
+      <input type="checkbox" ng-model="task.dos1"><span > Закрытие депозита</span>
+      <input type="checkbox" ng-model="task.dos2"><span > Одобрение кредита</span>
+      <input type="checkbox" ng-model="task.dos4"><span> Одобрение открыттия счета</span>
+      <input type="checkbox" ng-model="task.dos4"><span> Создание депозита</span>
+		      <button class="btn-success text-center" ng-click="addtask()" type="submit">Сохранить</button>
+		  </form>
+    </div>
+    <div class="col-md-7">  
+    <ul>
+    	<h3>Список Пользователей</h3>
+      <li  class="task-item" ng-repeat="task in tasks">
+        <span class="dne" ng-click="handler($index)">{{task.name}} {{task.surname}} {{task.photo}} </span>
+        <button class="btn-danger done" id = "ff" ng-click="removeItem($index)">Удалить</button> 
+      </li>
+      <input type="text" ng-model="Firstname" placeholder="Фамилия">
+      <button class="btn btn-info" ng-click="search()">Поиск</button>
+
+
+        <div><input list="dolS" ng-model="task.dolS" placeholder="Должность">
+        <datalist id="dolS">
+        <option>Ген директор</option>
+        <option>Директор</option>
+        <option>Заместитель директора</option>
+        <option>Секретарь</option>
+        </datalist></div>
+        <div><input list="podrS" ng-model="task.podrS" placeholder="Должность">
+        <datalist id="podrS">
+        <option>Департамент управления рисками</option>
+        <option>Департамент управления персоналом</option>
+        </datalist></div>
+
+
+      <li class="task-item" ng-repeat="Ftask in Firstnames">
+        <span class="dne" ng-click="handler($index)">{{Ftask.name}} {{Ftask.surname}} {{Ftask.photo}} </span>
+        <button class="btn-danger done"  ng-click="removeFItem($index)">Удалить</button> 
+      </li>
+    </ul>
+    </div>
+    </div>
+    </div>
+  </div>
